@@ -46,7 +46,6 @@ class SNNetworkManager {
     var baseUrl: URL {
         return URL(string: API.baseURL.rawValue)!
     }
-    var token: String?
     
     /// Customize URL Session request
     var urlSession: URLSession {
@@ -72,11 +71,22 @@ class SNNetworkManager {
             dict["Api-Key"] = xAPIKey
         }
         
-        if let token = token {
+        if let token = UserDefaults.standard.string(forKey: "SNNetworkManager_AccessToken") {
             dict["Authorization"] = "Bearer \(token)"
         }
         
         return dict
+    }
+    
+    /// Setup Authorization Token
+    /// - Parameter token: pass your token
+    func setAuthToken(token: String) {
+        UserDefaults.standard.set(token, forKey: "SNNetworkManager_AccessToken")
+    }
+    
+    /// Remove Authorization Token
+    func removeAuthToken() {
+        UserDefaults.standard.removeObject(forKey: "SNNetworkManager_AccessToken")
     }
     
     /// Delete Request
