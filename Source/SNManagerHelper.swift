@@ -9,5 +9,7 @@
 import Foundation
 
 enum API: String {
-    case baseURL = "baseURL"
+    case baseURL = "https://restcountries.com/v2/"
+    case all = "all"
+    case currency = "currency"
 }

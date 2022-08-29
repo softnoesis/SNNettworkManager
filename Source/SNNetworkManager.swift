@@ -67,7 +67,7 @@ class SNNetworkManager {
         dict["Accept"] = "application/json"
         dict["User-Agent"] = SNNetworkManager.getUserAgent()
         
-        if let xAPIKey = xAPIKey {
+        if let xAPIKey = Bundle.main.object(forInfoDictionaryKey: "RESTAppKey") as? String {
             dict["Api-Key"] = xAPIKey
         }
         
