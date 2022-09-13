@@ -1,4 +1,6 @@
 # SNNetworkManager
+[![swift-version](https://img.shields.io/badge/Swift-5.6-green)](https://github.com/apple/swift)
+
 SNNetworkManager is an efficient, easy-to-use, and powerful api management platform, designed to provide more elegant interface management services for developers, products, and testers. It can help developers to easily create, publish, and maintain APIs. SNNetworkManager also provides users to customize the api services. Developers only need to use the manager class and called request as per requirement.
 
 
